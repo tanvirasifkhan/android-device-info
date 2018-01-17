@@ -10,4 +10,17 @@
     <string name="nav_rate_us_text">Rate us</string>
     <string name="nav_share_app_text">Share this app</string>
     <string name="nav_more_apps_text">More apps</string>
+
+    <string name="os_tab_text">OS</string>
+    <string name="device_tab_text">Device</string>
+    <string name="cpu_tab_text">CPU</string>
+    <string name="memory_tab_text">Memory</string>
+    <string name="battery_tab_text">Battery</string>
+    <string name="storage_tab_text">Storage</string>
+    <string name="camera_tab_text">Camera</string>
+    <string name="network_tab_text">Network</string>
+    <string name="sensor_tab_text">Sensors</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
