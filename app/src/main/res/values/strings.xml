@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android Device Info</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_settings_text">Settings</string>
+    <string name="nav_find_on_facebook_text">Find us on Facebook</string>
+    <string name="nav_find_on_github_text">Find us on Github</string>
+    <string name="nav_rate_us_text">Rate us</string>
+    <string name="nav_share_app_text">Share this app</string>
+    <string name="nav_more_apps_text">More apps</string>
+</resources>
