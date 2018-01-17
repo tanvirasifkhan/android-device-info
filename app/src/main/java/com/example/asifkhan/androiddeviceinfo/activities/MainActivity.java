@@ -115,14 +115,14 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     //add all the tabs
     private void addTabs(){
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.os_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.device_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.cpu_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.memory_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.battery_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.storage_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.camera_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.network_tab_text));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.sensor_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_android).setText(R.string.os_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_device).setText(R.string.device_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_cpu).setText(R.string.cpu_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_memory).setText(R.string.memory_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_battery_charging_full).setText(R.string.battery_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_storage).setText(R.string.storage_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_camera).setText(R.string.camera_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_network_wifi).setText(R.string.network_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_sensor).setText(R.string.sensor_tab_text));
     }
 }
