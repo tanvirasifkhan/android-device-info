@@ -3,8 +3,10 @@ package com.example.asifkhan.androiddeviceinfo.activities;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +16,11 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.asifkhan.androiddeviceinfo.R;
+import com.example.asifkhan.androiddeviceinfo.adapters.TabAdapter;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
-
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,10 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         setTitle(getString(R.string.app_name));
         navigationMenuInit();
         showDrawerLayout();
+        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
+        addTabs();
+        viewPager=(ViewPager)findViewById(R.id.viewPager);
+        tabEvents();
     }
 
     @Override
@@ -51,6 +59,29 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private void navigationMenuInit(){
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    //adding all the tab layout events
+    private void tabEvents(){
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
+        viewPager.setAdapter(new TabAdapter(getSupportFragmentManager(),tabLayout.getTabCount()));
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     //change the status bar color according to the theme
@@ -79,5 +110,19 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //add all the tabs
+    private void addTabs(){
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.os_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.device_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.cpu_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.memory_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.battery_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.storage_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.camera_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.network_tab_text));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.sensor_tab_text));
     }
 }
