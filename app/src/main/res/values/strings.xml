@@ -14,7 +14,6 @@
     <string name="os_tab_text">OS Info</string>
     <string name="device_tab_text">Device Info</string>
     <string name="cpu_tab_text">CPU Info</string>
-    <string name="memory_tab_text">Memory</string>
     <string name="battery_tab_text">Battery</string>
     <string name="storage_tab_text">Storage</string>
     <string name="camera_tab_text">Camera</string>
