@@ -8,7 +8,6 @@ import com.example.asifkhan.androiddeviceinfo.fragments.BatteryFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.CPUFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.CameraFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.DeviceFragment;
-import com.example.asifkhan.androiddeviceinfo.fragments.MemoryFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.NetworkFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.OSFragment;
 import com.example.asifkhan.androiddeviceinfo.fragments.SensorsFragment;
@@ -36,16 +35,14 @@ public class TabAdapter extends FragmentPagerAdapter {
             case 2:
                 return new CPUFragment();
             case 3:
-                return new MemoryFragment();
-            case 4:
                 return new BatteryFragment();
-            case 5:
+            case 4:
                 return new StorageFragment();
-            case 6:
+            case 5:
                 return new CameraFragment();
-            case 7:
+            case 6:
                 return new NetworkFragment();
-            case 8:
+            case 7:
                 return new SensorsFragment();
             default:
                 return null;
